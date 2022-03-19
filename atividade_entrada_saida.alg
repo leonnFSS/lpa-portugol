@@ -40,6 +40,8 @@ inicio
         escreval("*                                                              *")
         escreval("*             Logica de Programação e Algoritmos               *")
         escreval("*                                                              *")
+        escreval("*              Exercícios de Entrada e Saída                   *")
+        escreval("*                                                              *")
         escreval("****************************************************************")
         escreval("")
         escreval("")
