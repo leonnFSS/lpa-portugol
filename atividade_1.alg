@@ -243,7 +243,6 @@ inicio
              escreva("Valor Pago: ")
              leia(pagamento)
 
-
              se consumo > pagamento entao
                 escreval("Pagamento insuficiente para cobrir o valor consumido!")
                 escreval("Ainda falta(m): $", consumo - pagamento)
@@ -278,14 +277,13 @@ inicio
                 escreval("nota(s) de $ 5: ",nota5)
                 escreval("nota(s) de $ 2: ",nota20)
                 escreval("moeda(s) de $ 1:",moeda1)
-
              fimse
-
-
+             
              escreval("")
              escreval("")
              escreva("Digite F9 para voltar o MENU INICIAL")
              pausa
+             
            outrocaso
              escreval("Até logo!")
         fimescolha
