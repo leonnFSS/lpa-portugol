@@ -12,7 +12,7 @@ Tela do menu principal em VisuAlg:
 ![image](https://user-images.githubusercontent.com/28631783/159128219-81b7b623-d865-433c-b311-d34525071a7d.png)
 
 Tela de uma atividade no VisuAlg
-![image](https://user-images.githubusercontent.com/28631783/160119695-f3a88bd3-a0ec-4ef7-8395-04bd4f803529.png)
+![image](https://user-images.githubusercontent.com/28631783/160119932-5284ee5a-cd30-4606-acb0-3a51afec4041.png)
 
 
 Tela da mesma atividade acima no app Pseudocode:
