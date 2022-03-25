@@ -3,7 +3,7 @@ Segue a resolução das atividades da disciplina  Lógica de Programação e Alg
 
 Os códigos foram testados em:
 
-Sistema  	Software
+Sistema  	  Software
 Windows 10	VisuAlg¹ 2.0 
 Android 12	Pseudocodigo² 2.09
 
@@ -13,4 +13,5 @@ Tela do menu principal em VisuAlg:
 
 Tela de uma atividade no app Pseudocode:
 
-![pseudocode_app_exemplo](https://user-images.githubusercontent.com/28631783/160119024-d91337a7-a881-4021-bad2-de2993b2269b.jpeg)
+
+![pseudocode_app_exemplo_m](https://user-images.githubusercontent.com/28631783/160119427-9836a45b-64b6-4d73-a9e9-3fa433ceb09c.jpeg)
