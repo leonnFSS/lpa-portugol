@@ -4,9 +4,8 @@ algoritmo "Exercícios de Entrada e Saída"
 // Data : 25/03/2022
 // Seção de Declarações
 
-var
-nome: literal 
-distancia, tempo, velocMedia: real
+var nome: caracter
+var distancia, tempo, velocMedia: real
 
 inicio
 	escreval("*********************************************")

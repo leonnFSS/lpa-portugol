@@ -3,10 +3,10 @@ algoritmo "Exercícios de Entrada e Saída"
 // Autor : Leonardo F.S.S
 // Data : 25/03/2022
 // Seção de Declarações
-var
-	nome: literal 
-	numFilhos: inteiro        
-	horasTrabalhadas, valorHoras, salarioHora, salarioBruto, salarioFinal: real
+
+var	nome: caracter
+var	numFilhos: inteiro        
+var	horasTrabalhadas, valorHoras, salarioHora, salarioBruto, salarioFinal: real
 	
 inicio
 	escreval("*********************************************")
