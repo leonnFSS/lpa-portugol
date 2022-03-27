@@ -30,6 +30,6 @@ inicio
 	// Apresentando resultados
 	escreval("")
 	escreval("*** RESULTADOS ***")
-	escreval("Salário final: ", salarioFinal:1:2)
+	escreval("Salário final: ", salarioFinal)
 
 fimalgoritmo

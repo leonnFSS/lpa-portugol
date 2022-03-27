@@ -31,5 +31,5 @@ inicio
 	// Apresentando resultados
 	escreval("")
 	escreval("*** RESULTADOS ***")
-	escreval("Salário final do vendedor ",nome,": ", salarioFinal:1:2)
+	escreval("Salário final do vendedor ",nome,": ", salarioFinal)
 fimalgoritmo

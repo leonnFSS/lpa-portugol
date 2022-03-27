@@ -24,5 +24,5 @@ inicio
 
 	escreval("")
 	escreval("*** RESULTADOS ***")
-	escreval("A velocidade média do ",nome," foi ",velocMedia:1:2, " km/h.")
+	escreval("A velocidade média do ",nome," foi ",velocMedia, " km/h.")
 fimalgoritmo
