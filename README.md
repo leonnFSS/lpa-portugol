@@ -4,7 +4,7 @@ Segue a resolução das atividades da disciplina  Lógica de Programação e Alg
 As atividades  estão separadas em pastas conforme os programas onde elas foram testadas.
 
 Os códigos foram testados nos seguintes sistemas operacionais e programas abaixo:
-- Windows 10:	VisuAlg, versão 2.0. 
+- Windows 10:	VisuAlg, versão 2.5. 
 - Android 12:	Pseudocodigo, versão 2.09.
 
 ### Imagens dos algoritmos rodando
