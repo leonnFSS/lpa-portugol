@@ -1,0 +1,4 @@
+# excluded files
+*.ini
+# excluded folders
+resolvidos/
