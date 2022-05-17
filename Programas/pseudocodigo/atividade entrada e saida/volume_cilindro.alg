@@ -3,8 +3,8 @@ algoritmo "Exercícios de Entrada e Saída"
 // Autor : Leonardo F.S.S
 // Data : 25/03/2022
 // Seção de Declarações
-var
-	raio, altura: real
+
+var	raio, altura: real
 	
 inicio
 	escreval("*********************************************")
