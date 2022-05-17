@@ -1,10 +1,10 @@
 # excluded files
 *.ini
-<<<<<<< HEAD
+
 pizzaria_1.0.alg
 troco_1.0_ enxuto.alg
 troco_1.0.alg
-=======
+
 # excluded folders
 resolvidos/
->>>>>>> d7b6edf577a6d2110b67647fc14296e7b0a630e1
+
