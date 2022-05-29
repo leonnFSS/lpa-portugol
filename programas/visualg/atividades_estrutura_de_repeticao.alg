@@ -436,7 +436,7 @@ repita
 limpatela
         escreval("****************************************************************")
         escreval("*                                                              *")
-        escreval("*             LÓGICA DE PROGRAMAÇÃO E ALGORIMOS                *")
+        escreval("*             LÓGICA DE PROGRAMAÇÃO E ALGORITMOS               *")
         escreval("*                                                              *")
         escreval("*            Exercícios de Estruturas de Repetição             *")
         escreval("*                                                              *")
