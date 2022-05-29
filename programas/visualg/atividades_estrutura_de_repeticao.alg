@@ -4,8 +4,33 @@ algoritmo "Estruturas Repetição "
 // Data : 17/05/2022
 // Seção de Declarações 
 
+funcao volta_menu_principal(): logico
+var terminar: logico
+ submenu: inteiro
+inicio
+   escreval("*********************************************")
+   escreval("Digite: ")
+   escreval("0 - voltar ao menu de atividades")
+   escreval("1 - testar outros valores")
+   escreva("Sua escolha foi: ")
+   leia(submenu)
+   escreval()
+
+se submenu = 0 entao
+   terminar <- verdadeiro
+   escreval("")
+   escreval("")
+   escreval("Digite F9 para voltar ao MENU INICIAL")
+   pausa
+senao
+   terminar <- falso
+fimse
+
+retorne terminar
+fimfuncao
+
 procedimento  intervalos
-var num, submenu, int0, int1, int2, int3: inteiro
+var num,  int0, int1, int2, int3: inteiro
 inicio
 repita
    limpatela
@@ -17,30 +42,34 @@ repita
    escreval("     Exercício 1 - Intervalos de 25")
    escreval("*********************************************")
    escreval("")
+   escreval("Quando desejar encerrar o experimento digite qualquer:")
+   escreval("número negativo ou maior que 100.")
+   escreval("")
+   
    repita
       escreva("Informe um número inteiro qualquer: ")
       leia(num)
-      escreval()
       
-      se (num>= 0)  e (num<=25) entao
-         int0 <- int0 + 1
+      se (num < 0) ou (num > 100) entao
       senao
-           se (num> 25)  e (num<=50) entao
-              int1 <- int1 + 1
-           senao
-                se (num>50)  e (num<=75) entao
-                   int2 <- int2 + 1
-                senao
-                     se (num> 75)  e (num<=100) entao
-                        int3 <- int3 + 1
-                     fimse
-                fimse
-           fimse
+         se (num>= 0)  e (num<=25) entao
+            int0 <- int0 + 1
+         senao
+              se (num> 25)  e (num<=50) entao
+                 int1 <- int1 + 1
+              senao
+                   se (num>50)  e (num<=75) entao
+                      int2 <- int2 + 1
+                   senao
+                        se (num> 75)  e (num<=100) entao
+                           int3 <- int3 + 1
+                        fimse
+                   fimse
+              fimse
+         fimse
       fimse
-      
-      escreval("Quando desejar encerrar o experimento digite um número negativo.")
-      escreval("")
-   ate num < 0
+
+   ate (num < 0) ou (num > 100)
    escreval("---------------------------------------------")
    escreval("RESULTADOS ")
    escreval("Valores entre: ")
@@ -49,27 +78,22 @@ repita
    escreval("51 e 75: ", int2)
    escreval("76 e 100: ", int3)
    escreval()
-   
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreval("Digite F9 para voltar o MENU INICIAL")
- pausa
+ate volta_menu_principal()
 fimprocedimento
 
 procedimento demografia
 var nome, sexo, mais_alta, sexo_mais_alta: caracter
     peso, altura, media_peso, t_peso,maior_altura : real
-    submenu, i, total, t_homem, t_mulher, aux: inteiro
+    i, total, t_homem, t_mulher, aux: inteiro
 inicio
 repita
+   limpatela
+   escreval("*********************************************")
+   escreval("     Exercício 2 - Estudo Demográfico")
+   escreval()
+   escreval("Preenchimento manual de dados")
+   escreval("*********************************************")
+
    i <- 250
    total <- 0
    t_homem <- 0
@@ -78,21 +102,82 @@ repita
    altura <- 0
    maior_altura <- 0
    
+   escreval("")
+   escreval("Informe os seguintes dados da pessoa: ")
+   escreval("")
+   enquanto i > 0 faca
+      // captando dados da população
+      escreva("nome: ")
+      leia(nome)
+      escreva("altura [em cm]: ")
+      leia(altura)
+      escreva("peso [em kg]: ")
+      leia(peso)
+      escreva("sexo [F para feminino ou M para masculino]: ")
+      leia(sexo)
+      escreval("")
+
+      // processamento
+      total <- total + 1
+      t_peso <- t_peso + peso
+
+      se sexo= "m" entao
+         t_homem <- t_homem +1
+      senao
+         t_mulher <- t_mulher + 1
+      fimse
+
+      se altura > maior_altura entao
+         maior_altura <- altura
+         mais_alta <- nome
+         sexo_mais_alta <- sexo
+      fimse
+      i <- i - 1
+   fimenquanto
+   escreval()
+   escreval("Total de pessoas: ", total)
+   escreval("Total de mulheres: ", t_mulher, ", ", 100*(t_mulher/total):2:2 ,"%.")
+   escreval("Total de homens: ", t_homem, ", ", 100*(t_homem/total):2:2 ,"%.")
+   escreval("Peso médio da pessoas: ", (t_peso/total):2:2)
+   escreval("Pessoa mais alta: ", mais_alta)
+   escreval("Sexo da pessoa mais alta: ", sexo_mais_alta)
+   escreval("Maior altura: ", maior_altura:2:2)
+   escreval("")
+ ate volta_menu_principal()
+fimprocedimento
+
+procedimento demografia_automatica
+var nome, sexo, mais_alta, sexo_mais_alta: caracter
+    peso, altura, media_peso, t_peso,maior_altura : real
+    i, total, t_homem, t_mulher, aux: inteiro
+inicio
+repita
    limpatela
    escreval("*********************************************")
-   escreval("     Exercício 2 - Estudo Demográfico")
+   escreval("     Exercício 2B - Estudo Demográfico")
+   escreval()
+   escreval("Preenchimento automático de dados")
    escreval("*********************************************")
    escreval("")
+   i <- 250
+   total <- 0
+   t_homem <- 0
+   t_mulher <- 0
+   t_peso <- 0
+   altura <- 0
+   maior_altura <- 0
+
    escreva("Gerando um  população: ")
    enquanto i > 0 faca
       // gerando da população
       peso <- 1000*(randi(150)+30)/1000
       altura <- (100*(randi(200))/10000)+ 0.3
       aux <- randi(12)
-      
+      eco on
       aleatorio on
       leia(nome)
       aleatorio off
+      eco off
 
       se aux > 5 entao
          sexo <- "f"
@@ -126,22 +211,11 @@ repita
    escreval("Sexo da pessoa mais alta: ", sexo_mais_alta)
    escreval("Maior altura: ", maior_altura:2:2)
    escreval()
-
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreval("Digite F9 para voltar o MENU INICIAL")
+ ate volta_menu_principal()
 fimprocedimento
 
 procedimento numero_perfeito
-var num, contador, cont2, perfeito, divisor, submenu, limite: inteiro
+var num, iterador, contador, perfeito, divisor, limite: inteiro
 inicio
 repita
    limpatela
@@ -149,48 +223,39 @@ repita
    escreval("     Exercício 3 - Número perfeito")
    escreval("*********************************************")
    escreval("")
+   // O exercício pede os 4 primeiros números
    escreva("Informe quantos números perfeitos deseja encontrar: ")
    leia(limite)
    perfeito <- 0
-   contador <- 2
-   cronometro on
+   iterador <- 2
+   cronometro on  // medindo quanto tempo será gasto para calcular todos números
 
    enquanto perfeito < limite faca
-    num <- int(2^contador - 1)   //número Mersenne: n1 = M1 = (2^1)-1
-    cont2 <- 1
+    num <- int(2^iterador - 1)   //número Mersenne: n1 = M1 = (2^1)-1
+    contador <- 1
     divisor <- 0
     // Descobrindo se num é número primo
-    enquanto num >=cont2 faca
-       se num%cont2 = 0 entao
+    enquanto num >= contador faca
+       se num % contador = 0 entao
           divisor <- divisor + 1
        fimse
-       cont2 <- cont2 + 1
+       contador <- contador + 1
     fimenquanto
+    
     se (divisor = 2) entao
-    // Se o número Mersenne é primo então ele gera número perfeito
+    // Se o número Mersenne é primo então ele gera um número perfeito
     // Nperfeito = numMersenne * 2^(n - 1)
       perfeito <- perfeito + 1
-      escreval(perfeito," - ",  num * 2^(contador-1))
+      escreval(perfeito," - ",  num * 2^(iterador-1))
     fimse
-    contador <- contador + 1
+    iterador <- iterador + 1
    fimenquanto
    cronometro off
-
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreval("Digite F9 para voltar o MENU INICIAL")
+ate volta_menu_principal()
 fimprocedimento
 
 procedimento   divisores
-var submenu,divisor, contador, m, fatorial, soma: inteiro
+var divisor, contador, m, fatorial, soma: inteiro
 inicio
 repita
    limpatela
@@ -240,21 +305,11 @@ repita
       escreval("Número negativo sairá desta atividade.")
       escreval()
    ate m < 0
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreval("Digite F9 para voltar o MENU INICIAL")
+ate volta_menu_principal()
 fimprocedimento
 
 procedimento   propriedades
-var submenu,contador,divisor, fatorial, i: inteiro
+var contador,divisor, fatorial, i, limite: inteiro
  primo: logico
 inicio
 repita
@@ -263,51 +318,66 @@ repita
    escreval("     Exercício 5 - Tabelas de Propriedades")
    escreval("*********************************************")
    escreval("")
-      escreval("  #   Quadr.   Cubo   fatorial  divisores  primo")
-      //processamento
-      para contador de 1 ate 10  faca
-         fatorial <- 1
-         divisor <- 0
+   escreva("Informe o número de números que devem ser avaliados: ")
+   leia(limite)
+   
+   se limite > 12 entao
+      escreval("")
+      escreval("NOTA 1")
+      escreval("Devido a limitação de recursos serão calculados ")
+      escreval("os fatoriais apenas para os 12 primeiros números.")
+   fimse
+   
+   se limite > 99 entao
+      limite <- 99
+      escreval("")
+      escreval("NOTA 2")
+      escreval("Devido a limitação de recursos a tabela mostrará")
+      escreval("apenas os ", limite," primeiros números.")
+   fimse
+
+   escreval("")
+   escreval("")
+   escreval("  #     Quadr.      Cubo   fatorial  divisores  primo")
+   //processamento
+   para contador de 1 ate limite  faca
+      fatorial <- 1
+      divisor <- 0
+
+      se contador <= 12 entao
          para i de 1 ate contador faca
            fatorial <- fatorial * i
+         fimpara
+      fimse
+
+      para i de 1 ate contador faca
            se contador%i = 0 entao
                 divisor <- divisor + 1
            fimse
-         fimpara
-         
-         se divisor = 2 entao
-            primo <- verdadeiro
-         senao
-            primo <- falso
-         fimse
-      
-         se contador%6 = 0 entao
-             escreval("  #   Quadr.   Cubo   fatorial  divisores  primo")
-         fimse
-
-         escreva(contador:3,"      ", (contador^2):3,"   ",(contador^3):4,"    ",fatorial:7,"      ",  divisor:2,"      ")
-         se primo entao
-            escreval("sim")
-         senao
-          escreval("não")
-         fimse
       fimpara
+      
+      se divisor <= 2 entao
+         primo <- verdadeiro
+      senao
+         primo <- falso
+      fimse
+      escreva(contador:3,"      ", (contador^2):5,"   ",(contador^3):7,"    ",fatorial:9,"      ",  divisor:2,"     ")
+      se primo entao
+         escreval("sim")
+      senao
+       escreval("não")
+      fimse
 
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreval("Digite F9 para voltar o MENU INICIAL")
+      se contador%20 = 0 entao
+          escreval("")
+          escreval("  #     Quadr.      Cubo   fatorial  divisores  primo")
+      fimse
+   fimpara
+ate volta_menu_principal()
 fimprocedimento
 
 procedimento mmc_mdc
-var submenu, a, b, mmc, mdc, mma, mmb, i: inteiro
+var a, b, mmc, mdc, mma, mmb, i: inteiro
 inicio
 repita
    limpatela
@@ -348,27 +418,14 @@ repita
    mmb <- b
   para i de 1 ate a faca
        se (mma%i = 0) e (mmb%i = 0) entao
-           mdc <- mdc * i
+           mdc <- i
        fimse
   fimpara
    // Resultado
    escreval(a," e ", b," ", " MMC: ", mmc)
    escreval(a," e ", b," ", " MDC: ", mdc)
-
    escreval()
-   escreval()
-   escreval()
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreval("Digite F9 para voltar o MENU INICIAL")
+ate volta_menu_principal()
 fimprocedimento
 
 var
@@ -388,12 +445,13 @@ limpatela
         escreval("")
 
         escreval("Digite uma opções de 0 a 6 conforme sugerido abaixo:")
-        escreval("   1 - para atividade 1: Intervalos de 25.")
-        escreval("   2 - para atividade 2: Contagem demográfica.")
-        escreval("   3 - para atividade 3: Números perfeito.")
-        escreval("   4 - para atividade 4: Quantidade de Divisores.")
-        escreval("   5 - para atividade 5: Propriedades Matemáticas.")
-        escreval("   6 - para desafio 1: MMC e MDC.")
+        escreval("   1 - atividade 1: Intervalos de 25.")
+        escreval("   2 - atividade 2: Contagem demográfica.")
+        escreval("   3 - atividade 3: Números perfeito.")
+        escreval("   4 - atividade 4: Quantidade de Divisores.")
+        escreval("   5 - atividade 5: Propriedades Matemáticas.")
+        escreval("   6 - desafio 1: MMC e MDC.")
+        escreval("   7 - atividade 2: Demografia[PREENCHIMENTO AUTOMÁTICO].")
 
         escreval("")
         escreval("      0 - para terminar este programa.")
@@ -401,24 +459,25 @@ limpatela
         escreval("")
         escreva("Você escolheu: ")
         leia(menu)
-        limpatela
 
-    escolha(menu)
-           caso 1
-             intervalos
-           caso 2
-             demografia
-           caso 3
-             numero_perfeito
-           caso 4
-             divisores
-           caso 5
-             propriedades
-           caso 6
-             mmc_mdc
-           outrocaso
-             escreval("Até logo!")
-             saida <- "x"
-        fimescolha
+       escolha(menu)
+              caso 1
+                intervalos
+              caso 2
+                demografia
+              caso 3
+                numero_perfeito
+              caso 4
+                divisores
+              caso 5
+                propriedades
+              caso 6
+                mmc_mdc
+              caso 7
+                demografia_automatica
+              outrocaso
+                escreval("ATÉ LOGO!")
+                saida <- "x"
+       fimescolha
 ate saida = "x"
 fimalgoritmo
