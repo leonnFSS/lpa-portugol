@@ -14,8 +14,6 @@ inicio
    escreval("1 - testar outros valores")
    escreva("Sua escolha foi: ")
    leia(submenu)
-   escreval()
-
 se submenu = 0 entao
    terminar <- verdadeiro
    escreval("")
@@ -231,7 +229,7 @@ repita
    cronometro on  // medindo quanto tempo será gasto para calcular todos números
 
    enquanto perfeito < limite faca
-    num <- int(2^iterador - 1)   //número Mersenne: n1 = M1 = (2^1)-1
+    num <- int(2^iterador - 1)   //número Mersenne: n1 = M1 = (2^1)-1;  M2 = (2^2)-1
     contador <- 1
     divisor <- 0
     // Descobrindo se num é número primo

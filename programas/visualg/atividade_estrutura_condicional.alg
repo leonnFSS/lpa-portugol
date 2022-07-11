@@ -4,6 +4,28 @@ algoritmo "Estruturas Condicionais "
 // Data : 01/05/2022
 // Seção de Declarações 
 
+funcao volta_menu_principal(): logico
+var terminar: logico
+ submenu: inteiro
+inicio
+   escreval("*********************************************")
+   escreval("Digite: ")
+   escreval("0 - voltar ao menu de atividades")
+   escreval("1 - testar outros valores")
+   escreva("Sua escolha foi: ")
+   leia(submenu)
+se submenu = 0 entao
+   terminar <- verdadeiro
+   escreval("")
+   escreval("")
+   escreval("Digite F9 para voltar ao MENU INICIAL")
+   pausa
+senao
+   terminar <- falso
+fimse
+retorne terminar
+fimfuncao
+
 procedimento  par_impar
 var num, submenu: inteiro
 inicio
@@ -15,7 +37,7 @@ repita
    escreval("")
    escreva("Informe um número inteiro qualquer: ")
    leia(num)
-   escreval()
+   escreval("")
    se num< 0 entao
       escreval("Este número não é positivo.")
    senao
@@ -25,24 +47,11 @@ repita
         escreval("ímpar.")
         fimse
    fimse
-
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
- pausa
+ate volta_menu_principal()
 fimprocedimento
 
 procedimento financiamento
 var salario, emprestimo: real
-    submenu: inteiro
 inicio
 repita
    limpatela
@@ -54,31 +63,19 @@ repita
    leia(salario)
    escreva("Informe o valor do empréstimo pretendido: ")
    leia(emprestimo)
-   escreval()
+   escreval("")
    se salario * 5 >= emprestimo entao
       escreval("Financiamento concedido.")
    senao
       escreval("Financiamento negado.")
    fimse
-
-   escreval()
+   escreval("")
    escreval("Obrigado por nos consultar.")
-
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = -1
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
+ate volta_menu_principal()
 fimprocedimento
 
 procedimento conceito_escolar
-var nota, submenu: inteiro
+var nota: inteiro
 inicio
 repita
    limpatela
@@ -88,8 +85,7 @@ repita
    escreval("")
    escreva("Informe a nota do aluno [valor inteiro apenas]: ")
    leia(nota)
-   escreval()
-
+   escreval("")
    escolha nota
    caso 0,1,2
        escreval("Conceito E")
@@ -104,23 +100,11 @@ repita
    outrocaso
        escreval("Conceito Ínvalido")
    fimescolha
-
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
+ate volta_menu_principal()
 fimprocedimento
 
 procedimento   ajuste_salarial
-var submenu: inteiro
-salario, novosalario: real
+var salario, novosalario: real
 inicio
 repita
    limpatela
@@ -130,8 +114,7 @@ repita
    escreval("")
    escreva("Informe o salário: $ ")
    leia(salario)
-   escreval()
-
+   escreval("")
    se (salario >= 0) e (salario <= 400) entao
       novosalario <- salario * 1.15
    senao
@@ -153,28 +136,15 @@ repita
          fimse
       fimse
    fimse
-   
    escreval("salário: $", salario:2:2)
    escreval("reajuste: %", 100*((novosalario - salario)/salario):2:2)
    escreval("novo salário: $", novosalario:2:2)
-
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
+ate volta_menu_principal()
 fimprocedimento
 
 procedimento   ordenacao_numerica
-var opcao, submenu : inteiro
+var opcao: inteiro
 a, b, c, maior, menor, meio: real
-
 inicio
 repita
    limpatela
@@ -229,16 +199,15 @@ repita
             menor <- a
          fimse
    fimse
-   escreval()
-   escreval()
+   escreval("")
+   escreval("")
    escreval("Escolha uma opção abaixo:")
    escreval("1 - ordenação crescente")
    escreval("2 - ordenação decrescente")
    escreval("3 - ordenação triangular")
-   escreval()
+   escreval("")
    escreva("Sua escolha foi: ")
    leia(opcao)
-
    escolha opcao
       caso 1
          escreval("crescente:   ",menor,",   ",meio,",   ",maior)
@@ -249,18 +218,8 @@ repita
       outrocaso
          escreval("As opções possíveis são apenas 1, 2 e 3. ")
    fimescolha
-   escreval()
-   escreval("*********************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval()
-ate submenu = 0
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
+   escreval("")
+ate volta_menu_principal()
 fimprocedimento
 
 var
@@ -268,46 +227,43 @@ menu: inteiro
 saida: caracter
 inicio
 repita
-limpatela
-        escreval("****************************************************************")
-        escreval("*                                                              *")
-        escreval("*             LÓGICA DE PROGRAMAÇÃO E ALGORIMOS                *")
-        escreval("*                                                              *")
-        escreval("*            Exercícios de Estruturas Condicionais            *")
-        escreval("*                                                              *")
-        escreval("****************************************************************")
-        escreval("")
-        escreval("")
-
-        escreval("Digite uma opções de 0 a 5 conforme sugerido abaixo:")
-        escreval("      1 - para atividade 1: Ímpar & Par.")
-        escreval("      2 - para atividade 2: Financiamento.")
-        escreval("      3 - para atividade 3: Conceito Escolar.")
-        escreval("      4 - para atividade 4: Ajuste Salarial.")
-        escreval("      5 - para desafio 1: Ordem dos Números.")
-
-        escreval("")
-        escreval("      0 - para terminar este programa.")
-        escreval("")
-        escreval("")
-        escreva("Você escolheu: ")
-        leia(menu)
-        limpatela
-
-    escolha(menu)
-           caso 1
-             par_impar
-           caso 2
-             financiamento
-           caso 3
-             conceito_escolar
-           caso 4
-             ajuste_salarial
-           caso 5
-             ordenacao_numerica
-           outrocaso
-             escreval("Até logo!")
-             saida <- "x"
-        fimescolha
+      limpatela
+      escreval("****************************************************************")
+      escreval("*                                                              *")
+      escreval("*             LÓGICA DE PROGRAMAÇÃO E ALGORIMOS                *")
+      escreval("*                                                              *")
+      escreval("*            Exercícios de Estruturas Condicionais            *")
+      escreval("*                                                              *")
+      escreval("****************************************************************")
+      escreval("")
+      escreval("")
+      escreval("Digite uma opções de 0 a 5 conforme sugerido abaixo:")
+      escreval("      1 - para atividade 1: Ímpar & Par.")
+      escreval("      2 - para atividade 2: Financiamento.")
+      escreval("      3 - para atividade 3: Conceito Escolar.")
+      escreval("      4 - para atividade 4: Ajuste Salarial.")
+      escreval("      5 - para desafio 1: Ordem dos Números.")
+      escreval("")
+      escreval("      0 - para terminar este programa.")
+      escreval("")
+      escreval("")
+      escreva("Você escolheu: ")
+      leia(menu)
+      limpatela
+      escolha(menu)
+        caso 1
+          par_impar
+        caso 2
+          financiamento
+        caso 3
+          conceito_escolar
+        caso 4
+          ajuste_salarial
+        caso 5
+          ordenacao_numerica
+        outrocaso
+          escreval("Até logo!")
+          saida <- "x"
+      fimescolha
 ate saida = "x"
 fimalgoritmo
