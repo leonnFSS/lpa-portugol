@@ -4,7 +4,7 @@ algoritmo "Exercícios de Entrada e Saída"
 // Data : 25/03/2022
 // Seção de Declarações
 
-var nome: caracter
+var nome: texto
 var distancia, tempo, velocMedia: real
 
 inicio
@@ -24,5 +24,7 @@ inicio
 
 	escreval("")
 	escreval("*** RESULTADOS ***")
-	escreval("A velocidade média do ",nome," foi ",velocMedia, " km/h.")
+	escreva("A velocidade média do ",nome)
+  escreva(" foi ",velocMedia)
+  escreva( " km/h.")
 fimalgoritmo

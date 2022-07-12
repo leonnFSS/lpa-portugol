@@ -4,9 +4,8 @@ algoritmo "Exercícios de Entrada e Saída"
 // Data : 25/03/2022
 // Seção de Declarações
 
-var	nome: caracter
-var	numFilhos: inteiro        
-var	horasTrabalhadas, valorHoras, salarioHora, salarioBruto, salarioFinal: real
+var a, b, c, media: inteiro
+
 	
 inicio
 	escreval("*********************************************")
@@ -30,6 +29,7 @@ inicio
 	// Apresentando resultados
 	escreval("")
 	escreval("*** RESULTADOS ***")
+escreval("Funcionário: ", nome)
 	escreval("Salário final: ", salarioFinal)
 
 fimalgoritmo

@@ -3,9 +3,8 @@ algoritmo "Exercícios de Entrada e Saída"
 // Autor : Leonardo F.S.S
 // Data : 25/03/2022
 // Seção de Declarações
-
-var a, b, c : real
-
+var
+        a, b, c : real
 inicio
 	escreval("*********************************************")
 	escreval("     Exercício 1 - Área de Polígonos")

@@ -1,17 +1,28 @@
+funcao terminar <- volta_menu_principal()
+var terminar: logico
+var submenu: inteiro
+   escreval("*********************************************")
+   escreval("Digite: ")
+   escreval("0 - voltar ao menu de atividades")
+   escreval("1 - testar outros valores")
+   escreva("Sua escolha foi: ")
+   leia(submenu)
 
-// Função :
-// Autor :
-// Data : 01/05/2022
-// Seção de Declarações 
+se submenu = 0 entao
+   terminar <- verdadeiro
+   escreval("")
+   escreval("Digite F9 para voltar ao MENU INICIAL")
+   pausa
+senao
+   terminar <- falso
+fimse
+fimfuncao
 
-funcao par_impar()
+funcao  par_impar()
 var num, submenu: inteiro
-
 repita
-   limpatela
-   escreval("***************************************")
-   escreval("     Exercício 1 - ÍmPar & Par")
-   escreval("***************************************")
+   limpatela      escreval("*********************************************")
+   escreval("     Exercício 1 - ÍmPar & Par")  escreval("*********************************************")
    escreval("")
    escreva("Informe um número inteiro qualquer: ")
    leia(num)
@@ -25,19 +36,7 @@ repita
         escreval("ímpar.")
         fimse
    fimse
-
-   escreval("***************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval("")
-ate submenu = 0
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
- pausa
+ate volta_menu_principal()
 fimfuncao
 
 funcao financiamento()
@@ -46,9 +45,9 @@ var submenu: inteiro
 
 repita
    limpatela
-   escreval("***************************************")
+   escreval("*********************************************")
    escreval("     Exercício 2 - Financiamento")
-   escreval("***************************************")
+   escreval("*********************************************")
    escreval("")
    escreva("Informe o salário do cliente: ")
    leia(salario)
@@ -62,29 +61,17 @@ repita
    fimse
 
    escreval("")
-   escreval("Obrigado por nos consultar.")
-
-   escreval("***************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval("")
-ate submenu = -1
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
+   escreval("Obrigado por nos consultar.")   
+ate volta_menu_principal()
 fimfuncao
 
 funcao conceito_escolar()
 var nota, submenu: inteiro
-
 repita
    limpatela
-   escreval("***************************************")
+   escreval("*********************************************")
    escreval("     Exercício 3 - Conceito Escolar")
-   escreval("***************************************")
+   escreval("*********************************************")
    escreval("")
    escreva("Informe a nota do aluno [valor inteiro apenas]: ")
    leia(nota)
@@ -104,29 +91,18 @@ repita
    outrocaso
        escreval("Conceito Ínvalido")
    fimescolha
-
-   escreval("***************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval("")
-ate submenu = 0
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
+ate volta_menu_principal()
 fimfuncao
 
-funcao ajuste_salarial()
+funcao   ajuste_salarial()
 var submenu: inteiro
 var salario, novosalario: real
 
 repita
    limpatela
-   escreval("***************************************")
+   escreval("*********************************************")
    escreval("     Exercício 4 - Ajuste Salarial")
-   escreval("***************************************")
+   escreval("*********************************************")
    escreval("")
    escreva("Informe o salário: $ ")
    leia(salario)
@@ -154,32 +130,21 @@ repita
       fimse
    fimse
    
-   escreval("salário: $", salario:2:2)
-   escreval("reajuste: %", 100*((novosalario - salario)/salario):2:2)
-   escreval("novo salário: $", novosalario:2:2)
-
-   escreval("***************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval("")
-ate submenu = 0
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
+   escreval("salário: $", salario)
+   escreval("reajuste: %", 100*((novosalario - salario)/salario))
+   escreval("novo salário: $", novosalario)
+ate volta_menu_principal()
 fimfuncao
 
-funcao ordenacao_numerica()
+funcao   ordenacao_numerica()
 var opcao, submenu : inteiro
 var a, b, c, maior, menor, meio: real
 
 repita
    limpatela
-   escreval("***************************************")
+   escreval("*********************************************")
    escreval("     Desafio 1 - Ordenação numérica")
-   escreval("***************************************")
+   escreval("*********************************************")
    escreval("")
    // captação de dados
    escreva("Digite um número real qualquer: ")
@@ -249,40 +214,32 @@ repita
          escreval("As opções possíveis são apenas 1, 2 e 3. ")
    fimescolha
    escreval("")
-   escreval("***************************************")
-   escreval("Digite: ")
-   escreval("0 - voltar ao menu de atividades")
-   escreval("1 - testar outros valores")
-   escreva("Sua escolha foi: ")
-   leia(submenu)
-   escreval("")
-ate submenu = 0
- escreval("")
- escreval("")
- escreva("Digite F9 para voltar o MENU INICIAL")
+ate volta_menu_principal()
 fimfuncao
 
-algoritmo "Estruturas Condicionais"
+algoritmo "Estruturas Condicionais "
 var menu: inteiro
 var saida: caracter
 inicio
 repita
 limpatela
-        escreval("**********************************************************")
-        escreval("*                                                        *")
-        escreval("*         LÓGICA DE PROGRAMAÇÃO E ALGORIMOS              *")
-        escreval("*                                                        *")
-        escreval("*        Exercícios de Estruturas Condicionais           *")
-        escreval("*                                                        *")
-        escreval("**********************************************************")
+        escreval("****************************************************************")
+        escreval("*                                                              *")
+        escreval("*             LÓGICA DE PROGRAMAÇÃO E ALGORIMOS                *")
+        escreval("*                                                              *")
+        escreval("*            Exercícios de Estruturas Condicionais            *")
+        escreval("*                                                              *")
+        escreval("****************************************************************")
         escreval("")
         escreval("")
+
         escreval("Digite uma opções de 0 a 5 conforme sugerido abaixo:")
         escreval("      1 - para atividade 1: Ímpar & Par.")
         escreval("      2 - para atividade 2: Financiamento.")
         escreval("      3 - para atividade 3: Conceito Escolar.")
         escreval("      4 - para atividade 4: Ajuste Salarial.")
         escreval("      5 - para desafio 1: Ordem dos Números.")
+
         escreval("")
         escreval("      0 - para terminar este programa.")
         escreval("")

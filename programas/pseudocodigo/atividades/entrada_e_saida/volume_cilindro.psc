@@ -3,8 +3,8 @@ algoritmo "Exercícios de Entrada e Saída"
 // Autor : Leonardo F.S.S
 // Data : 25/03/2022
 // Seção de Declarações
-
-var	raio, altura: real
+var
+	raio, altura,PI: real
 	
 inicio
 	escreval("*********************************************")
@@ -12,7 +12,9 @@ inicio
 	escreval("*********************************************")
 	escreval("")
 
-	// PI é uma constante já implementada em Portugol  =~ 3.14152
+	// PI é uma constante já implementada em Visualg  =~ 
+
+   PI <-3.14152
 	escreva("Digite o valor do raio: ")
 	leia(raio)
 	escreva("Digite o valor da altura da caixa: ")

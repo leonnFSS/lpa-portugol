@@ -3,15 +3,12 @@ algoritmo "Exercícios de Entrada e Saída"
 // Autor : Leonardo F.S.S
 // Data : 25/03/2022
 // Seção de Declarações
-
-var nome: caracter
-var numFilhos: inteiro
-var salarioBruto, salarioFinal: real
-var vendas, comissao: real
+var nome: texto
+var salarioBruto, salarioFinal, vendas, comissao: real
 
 inicio
 	escreval("*********************************************")
-	escreval("     Exercício 4 - Vendas")
+escreval("     Exercício 4 - Vendas")
 	escreval("*********************************************")
 	escreval("")
 
