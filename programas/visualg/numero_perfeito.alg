@@ -6,104 +6,89 @@ algoritmo "Números Perfeitos"
 procedimento v_1
 var soma,num, perfeito, i, j: inteiro
 inicio
-   escreva("Informe quantos números perfeitos devem ser calculados: ")
-   leia(num)
-   perfeito <- 0
-   j <- 2
-
-   se num > 4 entao
-      escreval("Versão muito lenta. Número deveria ser menor ou igual 4.")
-      num <- 4
-   fimse
-
-   repita
-      soma <- 0
-      para i de 1 ate (j div 2) faca // div equivale a  \
-         se j%i=0 entao
-            soma<-soma+i
-         fimse
-      fimpara
-
-      se soma = j  entao
-         perfeito<- perfeito +1
-         se  perfeito = 1  entao
-            escreval("#    Número Perfeito")
-            escreval(perfeito:2, "  ", j:6)
-         senao
-            escreval(perfeito:2, "  ", j:6)
-         fimse
-      fimse
-      
-      // depurando o código
-      se perfeito > 3 entao
-         escreval("DEPURAÇÃO: j= ", j, " soma: ", soma)
-      fimse
-      
-      j <- j+1
-      
-   ate num = perfeito
-   escreval("")
+escreva("Informe quantos números perfeitos devem ser calculados: ")
+leia(num)
+perfeito <- 0
+j <- 2
+se num > 4 entao
+  escreval("Versão muito lenta. Número deveria ser menor ou igual 4.")
+  num <- 4
+fimse
+repita
+  soma <- 0
+  para i de 1 ate (j div 2) faca // div equivale a  \
+	 se j%i=0 entao
+		soma<-soma+i
+	 fimse
+  fimpara
+  se soma = j  entao
+	 perfeito<- perfeito +1
+	 se  perfeito = 1  entao
+		escreval("#    Número Perfeito")
+		escreval(perfeito:2, "  ", j:6)
+	 senao
+		escreval(perfeito:2, "  ", j:6)
+	 fimse
+  fimse
+ j <- j+1 
+ate num = perfeito
+escreval("")
 fimprocedimento
 
 procedimento v_2
 var soma,num, perfeito, i, j: inteiro
 ultimo_j, ultima_soma : inteiro
 inicio
-   escreva("Informe quantos números perfeitos devem ser calculados: ")
-   leia(num)
-   perfeito <- 0
-   j <- 2
-   ultimo_j <- 1
-
-   repita
-      se ultima_soma = 0 entao
-         soma <- 0
-      senao
-         soma <- ultima_soma
-      fimse
-
-      para i de ultimo_j ate j div 2 faca // div equivale a  \
-         se j%i=0 entao
-            soma<-soma+i
-         fimse
-      fimpara
-          escreval("soma: ", soma, ", j: ", j, ", ultimo j: ", ultimo_j)
-      se soma = j  entao
-         ultimo_j <- j
-         ultima_soma <- soma
-         perfeito<- perfeito +1
-         escreval(perfeito, " - ", j)
-      fimse
-      
-      se j < ultimo_j entao
-         j <- ultimo_j
-
-      senao
-         j <- j+1
-      fimse
-
-   ate perfeito = 4
-   escreval("")
+escreva("Informe quantos números perfeitos devem ser calculados: ")
+leia(num)
+perfeito <- 0
+j <- 2
+ultimo_j <- 1
+repita
+  se ultima_soma = 0 entao
+	 soma <- 0
+  senao
+	 soma <- ultima_soma
+  fimse
+  para i de ultimo_j ate j div 2 faca // div equivale a  \
+	 se j%i=0 entao
+		soma<-soma+i
+	 fimse
+  fimpara
+	  escreval("soma: ", soma, ", j: ", j, ", ultimo j: ", ultimo_j)
+  se soma = j  entao
+	 ultimo_j <- j
+	 ultima_soma <- soma
+	 perfeito<- perfeito +1
+	 escreval(perfeito, " - ", j)
+  fimse  
+  se j < ultimo_j entao
+	 j <- ultimo_j
+  senao
+	 j <- j+1
+  fimse
+ate perfeito = 4
+escreval("")
 fimprocedimento
 
 procedimento v_3
 var i, num, perfeito: inteiro
 inicio
-   perfeito <- 0
-   i <- 2
-   enquanto perfeito < 4 faca
-      num <- int(2^i -1)
-      se num = 3 entao
-         perfeito <- perfeito + 1
-         escreval(num*2^(i-1))
-      senao
-         se nao((num%2=0)ou(num%3=0)) entao
-            escreval(num*2^(i-1))
-            perfeito <- perfeito +1
-         fimse
-      fimse
-    i <- i+1
-   fimenquanto
+perfeito <- 0
+i <- 2
+enquanto perfeito < 4 faca
+  num <- int(2^i -1)
+  se num = 3 entao
+	 perfeito <- perfeito + 1
+	 escreval(num*2^(i-1))
+  senao
+	 se nao((num%2=0)ou(num%3=0)) entao
+		escreval(num*2^(i-1))
+		perfeito <- perfeito +1
+	 fimse
+  fimse
+i <- i+1
+fimenquanto
 fimprocedimento
 
 procedimento v_4
@@ -130,7 +115,6 @@ enquanto perfeito < limite faca
 	   fimse
 	   contador <- contador + 1
 	fimenquanto
-
 	se (divisor = 2) entao
 	// Se o número de Mersenne é primo, então ele gera um número perfeito
 	// Nperfeito = numMersenne * 2^(n - 1)
@@ -145,7 +129,6 @@ enquanto perfeito < limite faca
 fimprocedimento
 
 var opcao: inteiro
-
 inicio
 repita
    limpatela
@@ -193,6 +176,4 @@ repita
          escreva("Opção inválida.")
    fimescolha
 ate opcao = 0
-
-
 fimalgoritmo
